@@ -104,11 +104,7 @@
 				D6CA01DB1E5D078A00958297 /* Model */,
 				D6CA01DC1E5D079100958297 /* View */,
 				D6CA01DD1E5D079400958297 /* Controller */,
-				D6CA01A11E5CF93E00958297 /* AppDelegate.swift */,
-				D6CA01A51E5CF93E00958297 /* Main.storyboard */,
-				D6CA01A81E5CF93E00958297 /* Assets.xcassets */,
-				D6CA01AA1E5CF93E00958297 /* LaunchScreen.storyboard */,
-				D6CA01AD1E5CF93E00958297 /* Info.plist */,
+				D6CA01DE1E5D153600958297 /* Supporting */,
 			);
 			path = FizzBuzz;
 			sourceTree = "<group>";
@@ -153,6 +149,18 @@
 			children = (
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		D6CA01DE1E5D153600958297 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				D6CA01A11E5CF93E00958297 /* AppDelegate.swift */,
+				D6CA01A51E5CF93E00958297 /* Main.storyboard */,
+				D6CA01A81E5CF93E00958297 /* Assets.xcassets */,
+				D6CA01AA1E5CF93E00958297 /* LaunchScreen.storyboard */,
+				D6CA01AD1E5CF93E00958297 /* Info.plist */,
+			);
+			name = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
