@@ -18,6 +18,7 @@
 		D6CA01E01E5D1F8200958297 /* FizzBuzzVCUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CA01DF1E5D1F8200958297 /* FizzBuzzVCUnitTests.swift */; };
 		D6CA01E21E5D1FCC00958297 /* FizzBuzzVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CA01E11E5D1FCC00958297 /* FizzBuzzVC.swift */; };
 		D6CA01E61E5D2EA700958297 /* FizzBuzzVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CA01E51E5D2EA700958297 /* FizzBuzzVCUITests.swift */; };
+		D6CA01E81E5D41DA00958297 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CA01E71E5D41DA00958297 /* Move.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D6CA01DF1E5D1F8200958297 /* FizzBuzzVCUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FizzBuzzVCUnitTests.swift; sourceTree = "<group>"; };
 		D6CA01E11E5D1FCC00958297 /* FizzBuzzVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FizzBuzzVC.swift; sourceTree = "<group>"; };
 		D6CA01E51E5D2EA700958297 /* FizzBuzzVCUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FizzBuzzVCUITests.swift; sourceTree = "<group>"; };
+		D6CA01E71E5D41DA00958297 /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				D6CA01D51E5CFA5A00958297 /* Brain.swift */,
 				D6CA01D91E5D01A800958297 /* Game.swift */,
+				D6CA01E71E5D41DA00958297 /* Move.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6CA01E81E5D41DA00958297 /* Move.swift in Sources */,
 				D6CA01E21E5D1FCC00958297 /* FizzBuzzVC.swift in Sources */,
 				D6CA01D61E5CFA5A00958297 /* Brain.swift in Sources */,
 				D6CA01A21E5CF93E00958297 /* AppDelegate.swift in Sources */,

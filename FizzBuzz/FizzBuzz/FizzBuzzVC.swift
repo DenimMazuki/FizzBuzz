@@ -13,6 +13,9 @@ class FizzBuzzVC: UIViewController {
     var game: Game?
     
     @IBOutlet weak var numberButton: UIButton!
+    @IBOutlet weak var fizzButton: UIButton!
+    @IBOutlet weak var buzzButton: UIButton!
+    @IBOutlet weak var fizzBuzzButton: UIButton!
     
     var gameScore: Int? {
         didSet {
@@ -39,7 +42,7 @@ class FizzBuzzVC: UIViewController {
     }
 
     
-    func play(move: String) {
+    func play(move: Move) {
         guard let unwrappedGame = game else {
             print("Game is nil")
             return
@@ -49,14 +52,21 @@ class FizzBuzzVC: UIViewController {
         gameScore = response.score
     }
 
-    @IBAction func numberButtonTapped(_ sender: UIButton) {
-        guard let unwrappedScore = gameScore else {
-            print("Game Score is nil")
-            return
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        switch sender {
+        case numberButton:
+            play(move: Move.Number)
+        case fizzButton:
+            play(move: Move.Fizz)
+        case buzzButton:
+            play(move: Move.Buzz)
+        case fizzBuzzButton:
+            play(move: Move.FizzBuzz)
+        default:
+            print("Invalid Selection")
         }
-        
-        let nextScore = unwrappedScore + 1
-        play(move: "\(nextScore)")
     }
+    
+    
 
 }

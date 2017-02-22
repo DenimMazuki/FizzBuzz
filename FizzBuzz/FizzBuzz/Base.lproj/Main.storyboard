@@ -42,29 +42,41 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="numberButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R2G-tY-jOy"/>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0z-tw-9lg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twy-ZC-AUJ">
                                         <rect key="frame" x="179" y="0.0" width="164" height="164"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzButton"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
                                         <state key="normal" image="champagne" backgroundImage="button_border">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7HA-Vx-THm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAk-io-FD8">
                                         <rect key="frame" x="0.0" y="179" width="164" height="164"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="buzzButton"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
                                         <state key="normal" image="lightning" backgroundImage="button_border">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GW2-um-fk1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSw-Id-t4X">
                                         <rect key="frame" x="179" y="179" width="164" height="164"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzBuzzButton"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
                                         <state key="normal" image="space" backgroundImage="button_border">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SM7-AD-oOw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -107,6 +119,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buzzButton" destination="uAk-io-FD8" id="sAl-LS-30a"/>
+                        <outlet property="fizzButton" destination="Twy-ZC-AUJ" id="gsA-ax-ZdZ"/>
+                        <outlet property="fizzBuzzButton" destination="vSw-Id-t4X" id="rGN-7J-cM1"/>
                         <outlet property="numberButton" destination="bfO-Bn-wlv" id="wLt-eL-dBK"/>
                     </connections>
                 </viewController>
