@@ -19,6 +19,7 @@ class FizzBuzzVC: UIViewController {
     
     @IBOutlet weak var highScoreLabel: UILabel!
     
+    
     var highScore: Int? {
         didSet {
             guard let checkedHighScore = highScore else {
@@ -26,7 +27,7 @@ class FizzBuzzVC: UIViewController {
                 return
             }
             
-            highScoreLabel.text = "High Score: \(checkedHighScore)"
+            highScoreLabel.text = "\(checkedHighScore)"
         }
     }
     
@@ -80,12 +81,7 @@ class FizzBuzzVC: UIViewController {
         // Check if game is still valid
         checkGame(right: response.right)
         
-        let updateHS = unwrappedGame.checkAndUpdateHighScore()
-        
-        if (updateHS) {
-            highScore = response.score
-        }
-        
+        highScore = unwrappedGame.highScore
         gameScore = response.score
     }
     

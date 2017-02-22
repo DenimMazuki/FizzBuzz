@@ -103,8 +103,15 @@
                                     <action selector="playAgainButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BLy-AB-q1j"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDL-GG-nc7">
-                                <rect key="frame" x="16" y="28" width="126" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDL-GG-nc7">
+                                <rect key="frame" x="16" y="28" width="109" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zr8-fo-yOP">
+                                <rect key="frame" x="128" y="28" width="12" height="28"/>
+                                <accessibility key="accessibilityConfiguration" identifier="highScoreLabel"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -115,7 +122,9 @@
                             <constraint firstItem="c95-Qn-LEk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5Ym-Mn-Pth"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PCw-sh-cwY" secondAttribute="bottom" constant="20" id="BQX-uS-Qhe"/>
                             <constraint firstItem="c95-Qn-LEk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EWo-54-yjy"/>
+                            <constraint firstItem="Zr8-fo-yOP" firstAttribute="leading" secondItem="RDL-GG-nc7" secondAttribute="trailing" constant="3" id="PT5-kd-hqh"/>
                             <constraint firstItem="RDL-GG-nc7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ROy-GQ-ytJ"/>
+                            <constraint firstItem="Zr8-fo-yOP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="UWq-35-Ukn"/>
                             <constraint firstItem="PCw-sh-cwY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XoJ-Ye-MzR"/>
                             <constraint firstItem="c95-Qn-LEk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZPJ-N9-aq7"/>
                             <constraint firstItem="RDL-GG-nc7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZRh-9V-Ld0"/>
@@ -125,7 +134,7 @@
                         <outlet property="buzzButton" destination="uAk-io-FD8" id="sAl-LS-30a"/>
                         <outlet property="fizzButton" destination="Twy-ZC-AUJ" id="gsA-ax-ZdZ"/>
                         <outlet property="fizzBuzzButton" destination="vSw-Id-t4X" id="rGN-7J-cM1"/>
-                        <outlet property="highScoreLabel" destination="RDL-GG-nc7" id="dqe-MD-ePR"/>
+                        <outlet property="highScoreLabel" destination="Zr8-fo-yOP" id="VmP-Bg-yFa"/>
                         <outlet property="numberButton" destination="bfO-Bn-wlv" id="wLt-eL-dBK"/>
                     </connections>
                 </viewController>

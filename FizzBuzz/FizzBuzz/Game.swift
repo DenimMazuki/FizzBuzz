@@ -18,18 +18,18 @@ class Game {
         
         if (result == move) {
             score += 1
+            checkAndUpdateHighScore()
             return (true, score)
         } else {
+            checkAndUpdateHighScore()
             return (false, score)
         }
     }
     
-    func checkAndUpdateHighScore() -> Bool{
+    func checkAndUpdateHighScore() {
         if (score > highScore) {
             highScore = score
-            return true
         }
-        return false
     }
     
     func reset() {

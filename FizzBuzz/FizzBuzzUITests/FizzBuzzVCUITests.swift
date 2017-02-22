@@ -170,5 +170,25 @@ class FizzBuzzVCUITests: XCTestCase {
         XCTAssertEqual(newScore, "1")
     }
     
+    func testUpdateHighScoreAfterIncrementingOnce() {
+        let numberButton = app.buttons["numberButton"]
+        numberButton.tap()
+        
+        let highScoreLabel = app.staticTexts["highScoreLabel"]
+        XCTAssertEqual(highScoreLabel.label, "1")
+    }
+    
+    func testUpdateHighScoreShouldNotUpdateAfterHigherScore() {
+        let numberButton = app.buttons["numberButton"]
+        let paButton = app.buttons["paButton"]
+        
+        numberButton.tap()
+        numberButton.tap()
+        paButton.tap()
+        numberButton.tap()
+        
+        let highScoreLabel = app.staticTexts["highScoreLabel"]
+        XCTAssertEqual(highScoreLabel.label, "2")
+    }
     
 }
