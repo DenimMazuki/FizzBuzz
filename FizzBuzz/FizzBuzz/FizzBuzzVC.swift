@@ -10,6 +10,8 @@ import UIKit
 
 class FizzBuzzVC: UIViewController {
     
+    let defaults = UserDefaults.standard
+    
     var game: Game?
     
     @IBOutlet weak var numberButton: UIButton!
@@ -27,7 +29,8 @@ class FizzBuzzVC: UIViewController {
                 return
             }
             
-            highScoreLabel.text = "\(checkedHighScore)"
+            defaults.set(checkedHighScore, forKey: "highScore")
+            highScoreLabel.text = "\(defaults.integer(forKey: "highScore"))"
         }
     }
     
@@ -41,18 +44,24 @@ class FizzBuzzVC: UIViewController {
             numberButton.setTitle("\(checkedGameScore)", for: .normal)
         }
     }
+    
+    func loadScores() {
+        guard let unwrappedGame = game else {
+            print("Game is nil")
+            return
+        }
+        
+        gameScore = unwrappedGame.score
+        highScore = defaults.integer(forKey: "highScore")
+        unwrappedGame.highScore = highScore!
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         game = Game()
         
-        guard let checkedGame = game else {
-            print("Game is nil")
-            return
-        }
-        
-        gameScore = checkedGame.score
+        loadScores()
     }
     
     func toggleButtons() {
@@ -90,8 +99,7 @@ class FizzBuzzVC: UIViewController {
             print("Game is nil")
             return
         }
-        
-        toggleButtons()
+        gameScore = 0
         unwrappedGame.reset()
     }
     
@@ -121,7 +129,10 @@ class FizzBuzzVC: UIViewController {
     // Resets game when tapped
     @IBAction func playAgainButtonTapped(_ sender: UIButton) {
         reset()
-        gameScore = 0
+        
+        if (!numberButton.isEnabled) {
+            toggleButtons()
+        }
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
