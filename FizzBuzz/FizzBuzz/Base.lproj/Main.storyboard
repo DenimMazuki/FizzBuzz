@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c95-Qn-LEk">
-                                <rect key="frame" x="16" y="96" width="288" height="288"/>
+                                <rect key="frame" x="16" y="126" width="288" height="288"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfO-Bn-wlv">
                                         <rect key="frame" x="0.0" y="0.0" width="138.5" height="138.5"/>
@@ -131,19 +131,38 @@
                                     <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hD-6K-Lns"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bba-Xe-Kz5">
+                                <rect key="frame" x="16" y="61" width="288" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="97z-ff-dCl">
+                                        <rect key="frame" x="123" y="-5.5" width="43" height="50"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="36"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.87058823529411766" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="97z-ff-dCl" firstAttribute="centerX" secondItem="bba-Xe-Kz5" secondAttribute="centerX" id="K6R-oj-npA"/>
+                                    <constraint firstItem="97z-ff-dCl" firstAttribute="centerY" secondItem="bba-Xe-Kz5" secondAttribute="centerY" id="u9Q-t7-1KA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="bba-Xe-Kz5" firstAttribute="top" secondItem="Zr8-fo-yOP" secondAttribute="bottom" constant="5" id="0a0-DO-hF8"/>
+                            <constraint firstItem="bba-Xe-Kz5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4nL-hS-KbL"/>
                             <constraint firstItem="c95-Qn-LEk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5Ym-Mn-Pth"/>
                             <constraint firstItem="q4Z-sQ-YAk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="7Bd-6G-HaJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PCw-sh-cwY" secondAttribute="bottom" constant="20" id="BQX-uS-Qhe"/>
-                            <constraint firstItem="c95-Qn-LEk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EWo-54-yjy"/>
+                            <constraint firstItem="c95-Qn-LEk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="EWo-54-yjy"/>
                             <constraint firstItem="Zr8-fo-yOP" firstAttribute="leading" secondItem="RDL-GG-nc7" secondAttribute="trailing" constant="3" id="PT5-kd-hqh"/>
                             <constraint firstItem="RDL-GG-nc7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ROy-GQ-ytJ"/>
                             <constraint firstItem="Zr8-fo-yOP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="UWq-35-Ukn"/>
                             <constraint firstItem="PCw-sh-cwY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XoJ-Ye-MzR"/>
                             <constraint firstItem="c95-Qn-LEk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZPJ-N9-aq7"/>
                             <constraint firstItem="RDL-GG-nc7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZRh-9V-Ld0"/>
+                            <constraint firstItem="c95-Qn-LEk" firstAttribute="top" secondItem="bba-Xe-Kz5" secondAttribute="bottom" constant="26" id="oNj-RH-Ned"/>
+                            <constraint firstItem="bba-Xe-Kz5" firstAttribute="width" secondItem="c95-Qn-LEk" secondAttribute="width" id="tFe-cX-WUr"/>
                             <constraint firstItem="q4Z-sQ-YAk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wPW-rt-U3f"/>
                         </constraints>
                     </view>
@@ -153,6 +172,7 @@
                         <outlet property="fizzBuzzButton" destination="vSw-Id-t4X" id="rGN-7J-cM1"/>
                         <outlet property="highScoreLabel" destination="Zr8-fo-yOP" id="VmP-Bg-yFa"/>
                         <outlet property="numberButton" destination="bfO-Bn-wlv" id="wLt-eL-dBK"/>
+                        <outlet property="timerLabel" destination="97z-ff-dCl" id="eaz-3U-2tw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

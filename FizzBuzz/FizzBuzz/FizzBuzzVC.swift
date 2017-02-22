@@ -77,6 +77,7 @@ class FizzBuzzVC: UIViewController {
         // If the response is not valid, disable the buttons
         if (!right) {
             toggleButtons()
+            timer.invalidate()
             gameStarted = false
         }
     }
@@ -90,6 +91,7 @@ class FizzBuzzVC: UIViewController {
         
         if (!gameStarted) {
             gameStarted = true
+            startTimer()
         }
         
         let response = unwrappedGame.play(move: move)
@@ -139,6 +141,8 @@ class FizzBuzzVC: UIViewController {
         reset()
         gameStarted = false
         
+        seconds = 10
+        
         if (!numberButton.isEnabled) {
             toggleButtons()
         }
@@ -148,6 +152,29 @@ class FizzBuzzVC: UIViewController {
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         resetHighScore()
         reset()
+    }
+    
+    // Timer logic
+    var timer = Timer()
+    var seconds = 0 {
+        didSet {
+            timerLabel.text = "\(seconds)"
+        }
+    }
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    func startTimer() {
+        seconds = 10
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(FizzBuzzVC.updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    func updateTimer() {
+        seconds -= 1
+        timerLabel.text = "\(seconds)"
+        
+        if (seconds == 0) {
+            timer.invalidate()
+        }
     }
     
 
