@@ -88,6 +88,10 @@ class FizzBuzzVCUnitTests: XCTestCase {
         XCTAssertEqual(newScore, 1)
     }
     
-    
+    func testIncrementScoreAndResetHighScore() {
+        let _ = fizzbuzzVC.game?.play(move: Move.Number)
+        fizzbuzzVC.game?.resetHighScore()
+        XCTAssertEqual(fizzbuzzVC.game?.highScore, 0)
+    }
     
 }

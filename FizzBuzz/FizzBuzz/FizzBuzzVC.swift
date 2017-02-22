@@ -95,6 +95,14 @@ class FizzBuzzVC: UIViewController {
         unwrappedGame.reset()
     }
     
+    func resetHighScore() {
+        guard let unwrappedGame = game else {
+            print("Game is nil")
+            return
+        }
+        unwrappedGame.resetHighScore()
+        unwrappedGame.reset()
+    }
     // Execute actions depending on button tapped
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender {
@@ -114,6 +122,12 @@ class FizzBuzzVC: UIViewController {
     @IBAction func playAgainButtonTapped(_ sender: UIButton) {
         reset()
         gameScore = 0
+    }
+    
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        resetHighScore()
+        gameScore = 0
+        highScore = 0
     }
     
 

@@ -36,6 +36,10 @@ class Game {
         score = 0
     }
     
+    func resetHighScore() {
+        highScore = 0
+    }
+    
     init() {
         score = 0
         highScore = 0

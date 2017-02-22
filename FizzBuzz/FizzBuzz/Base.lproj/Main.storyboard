@@ -28,7 +28,7 @@
                                 <rect key="frame" x="16" y="96" width="288" height="288"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfO-Bn-wlv">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="137.5"/>
                                         <accessibility key="accessibilityConfiguration" identifier="numberButton"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
                                         <state key="normal" title="0" backgroundImage="button_border">
@@ -39,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twy-ZC-AUJ">
-                                        <rect key="frame" x="150" y="0.0" width="138" height="138"/>
+                                        <rect key="frame" x="150.5" y="0.0" width="137.5" height="137.5"/>
                                         <accessibility key="accessibilityConfiguration" identifier="fizzButton"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
                                         <state key="normal" image="champagne" backgroundImage="button_border">
@@ -50,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAk-io-FD8">
-                                        <rect key="frame" x="0.0" y="150" width="138" height="138"/>
+                                        <rect key="frame" x="0.0" y="150.5" width="137.5" height="137.5"/>
                                         <accessibility key="accessibilityConfiguration" identifier="buzzButton"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
                                         <state key="normal" image="lightning" backgroundImage="button_border">
@@ -61,7 +61,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSw-Id-t4X">
-                                        <rect key="frame" x="150" y="150" width="138" height="138"/>
+                                        <rect key="frame" x="150.5" y="150.5" width="137.5" height="137.5"/>
                                         <accessibility key="accessibilityConfiguration" identifier="fizzBuzzButton"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
                                         <state key="normal" image="space" backgroundImage="button_border">
@@ -116,10 +116,27 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4Z-sQ-YAk">
+                                <rect key="frame" x="255" y="32" width="49" height="20"/>
+                                <accessibility key="accessibilityConfiguration" identifier="resetButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="s49-dB-Jm3"/>
+                                    <constraint firstAttribute="width" constant="49" id="xBt-eV-7ZB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dLe-Gp-QTJ"/>
+                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hD-6K-Lns"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="c95-Qn-LEk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5Ym-Mn-Pth"/>
+                            <constraint firstItem="q4Z-sQ-YAk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="7Bd-6G-HaJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PCw-sh-cwY" secondAttribute="bottom" constant="20" id="BQX-uS-Qhe"/>
                             <constraint firstItem="c95-Qn-LEk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EWo-54-yjy"/>
                             <constraint firstItem="Zr8-fo-yOP" firstAttribute="leading" secondItem="RDL-GG-nc7" secondAttribute="trailing" constant="3" id="PT5-kd-hqh"/>
@@ -128,6 +145,7 @@
                             <constraint firstItem="PCw-sh-cwY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XoJ-Ye-MzR"/>
                             <constraint firstItem="c95-Qn-LEk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZPJ-N9-aq7"/>
                             <constraint firstItem="RDL-GG-nc7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZRh-9V-Ld0"/>
+                            <constraint firstItem="q4Z-sQ-YAk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wPW-rt-U3f"/>
                         </constraints>
                     </view>
                     <connections>
@@ -140,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-238" y="-7"/>
+            <point key="canvasLocation" x="-238.125" y="-7.5"/>
         </scene>
     </scenes>
     <resources>
