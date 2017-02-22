@@ -14,6 +14,8 @@ class FizzBuzzVC: UIViewController {
     
     var game: Game?
     
+    var gameStarted: Bool = false
+    
     @IBOutlet weak var numberButton: UIButton!
     @IBOutlet weak var fizzButton: UIButton!
     @IBOutlet weak var buzzButton: UIButton!
@@ -75,6 +77,7 @@ class FizzBuzzVC: UIViewController {
         // If the response is not valid, disable the buttons
         if (!right) {
             toggleButtons()
+            gameStarted = false
         }
     }
     
@@ -83,6 +86,10 @@ class FizzBuzzVC: UIViewController {
         guard let unwrappedGame = game else {
             print("Game is nil")
             return
+        }
+        
+        if (!gameStarted) {
+            gameStarted = true
         }
         
         let response = unwrappedGame.play(move: move)
@@ -110,6 +117,7 @@ class FizzBuzzVC: UIViewController {
         }
         unwrappedGame.resetHighScore()
         unwrappedGame.reset()
+        highScore = 0
     }
     // Execute actions depending on button tapped
     @IBAction func buttonTapped(_ sender: UIButton) {
@@ -129,16 +137,17 @@ class FizzBuzzVC: UIViewController {
     // Resets game when tapped
     @IBAction func playAgainButtonTapped(_ sender: UIButton) {
         reset()
+        gameStarted = false
         
         if (!numberButton.isEnabled) {
             toggleButtons()
         }
+        
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         resetHighScore()
-        gameScore = 0
-        highScore = 0
+        reset()
     }
     
 
