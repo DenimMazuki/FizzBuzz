@@ -37,4 +37,5 @@ class Brain {
             return Move.Number
         }
     }
+
 }

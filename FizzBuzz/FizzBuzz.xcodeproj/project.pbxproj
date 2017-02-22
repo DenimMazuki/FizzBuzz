@@ -148,6 +148,7 @@
 		D6CA01DC1E5D079100958297 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D6CA01E11E5D1FCC00958297 /* FizzBuzzVC.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -155,7 +156,6 @@
 		D6CA01DD1E5D079400958297 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D6CA01E11E5D1FCC00958297 /* FizzBuzzVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

@@ -10,6 +10,7 @@ import Foundation
 
 class Game {
     var score: Int
+    var highScore: Int
     let brain = Brain()
     
     func play(move: Move) -> (right: Bool, score: Int) {
@@ -23,7 +24,20 @@ class Game {
         }
     }
     
+    func checkAndUpdateHighScore() -> Bool{
+        if (score > highScore) {
+            highScore = score
+            return true
+        }
+        return false
+    }
+    
+    func reset() {
+        score = 0
+    }
+    
     init() {
         score = 0
+        highScore = 0
     }
 }

@@ -106,4 +106,5 @@ class GameTests: XCTestCase {
         let response = game.play(move: Move.Number)
         XCTAssertNotNil(response.score)
     }
+
 }
