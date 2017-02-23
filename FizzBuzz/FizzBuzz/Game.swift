@@ -13,7 +13,14 @@ class Game {
     var highScore: Int
     let brain = Brain()
     
+    var gameStarted: Bool
+    
     func play(move: Move) -> (right: Bool, score: Int) {
+        
+        if (!gameStarted) {
+            gameStarted = true
+        }
+        
         let result = brain.check(number: score + 1)
         
         if (result == move) {
@@ -45,5 +52,6 @@ class Game {
     init() {
         score = 0
         highScore = 0
+        gameStarted = false
     }
 }

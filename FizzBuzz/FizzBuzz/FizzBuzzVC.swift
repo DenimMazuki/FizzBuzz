@@ -14,8 +14,6 @@ class FizzBuzzVC: UIViewController {
     
     var game: Game?
     
-    var gameStarted: Bool = false
-    
     @IBOutlet weak var numberButton: UIButton!
     @IBOutlet weak var fizzButton: UIButton!
     @IBOutlet weak var buzzButton: UIButton!
@@ -76,11 +74,10 @@ class FizzBuzzVC: UIViewController {
     func checkGame(right: Bool) {
         // If the response is not valid, disable the buttons
         if (!right) {
-            toggleButtons()
-            timer.invalidate()
-            gameStarted = false
+            invalidateGame()
         }
     }
+    
     
     
     func play(move: Move) {
@@ -89,8 +86,8 @@ class FizzBuzzVC: UIViewController {
             return
         }
         
-        if (!gameStarted) {
-            gameStarted = true
+        if (!unwrappedGame.gameStarted) {
+            unwrappedGame.gameStarted = true
             startTimer()
         }
         
@@ -108,6 +105,7 @@ class FizzBuzzVC: UIViewController {
             print("Game is nil")
             return
         }
+        
         gameScore = 0
         unwrappedGame.reset()
     }
@@ -117,10 +115,44 @@ class FizzBuzzVC: UIViewController {
             print("Game is nil")
             return
         }
+        
+        reset()
         unwrappedGame.resetHighScore()
-        unwrappedGame.reset()
         highScore = 0
     }
+    
+    // Function to end game
+    func invalidateGame() {
+        guard let unwrappedGame = game else {
+            print("Game is nil")
+            return
+        }
+        
+        timer.invalidate()
+        
+        if (numberButton.isEnabled) {
+            toggleButtons()
+        }
+        
+        unwrappedGame.gameStarted = false
+    }
+    
+    func restartGame() {
+        seconds = 10
+        timer.invalidate()
+        
+        guard let unwrappedGame = game else {
+            print("Game is nil")
+            return
+        }
+        
+        if (!numberButton.isEnabled) {
+            toggleButtons()
+        }
+        
+        unwrappedGame.gameStarted = false
+    }
+    
     // Execute actions depending on button tapped
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender {
@@ -138,21 +170,21 @@ class FizzBuzzVC: UIViewController {
     }
     // Resets game when tapped
     @IBAction func playAgainButtonTapped(_ sender: UIButton) {
+        
         reset()
-        gameStarted = false
         
-        seconds = 10
-        
-        if (!numberButton.isEnabled) {
-            toggleButtons()
-        }
+        restartGame()
         
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
+        
         resetHighScore()
-        reset()
+        
+        restartGame()
+        
     }
+    
     
     // Timer logic
     var timer = Timer()
